@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/lms?createDatabaseIfNotExist=true
     username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:mysql}
+    password: ${MYSQL_PASSWORD:Cloud#Pass1234}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
