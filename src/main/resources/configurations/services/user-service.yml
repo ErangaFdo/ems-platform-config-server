@@ -4,9 +4,9 @@ spring:
       enabled: true
 
   datasource:
-    url: jdbc:postgresql://localhost:12500/lms
-    username: postgres
-    password: psql
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/lms
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:psql}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -35,6 +35,6 @@ app:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka
+      defaultZone: ${EUREKA_SERVER:http://localhost:9001/eureka}
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: true

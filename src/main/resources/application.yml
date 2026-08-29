@@ -1,15 +1,12 @@
 spring:
   application:
     name: Config-Server
-
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/chaminduchirantha/lms-project-configurations.git
-          search-paths: platform,services
         native:
-
           search-locations:
             - classpath:/configurations
             - classpath:/configurations/platform
@@ -17,4 +14,5 @@ spring:
 
 server:
   port: 9000
+
 

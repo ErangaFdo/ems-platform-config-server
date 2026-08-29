@@ -4,9 +4,9 @@ spring:
       enabled: true
 
   datasource:
-    url: jdbc:mysql://localhost:14500/lms?createDatabaseIfNotExist=true
-    username: root
-    password: mysql
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/lms?createDatabaseIfNotExist=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:mysql}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -20,3 +20,10 @@ spring:
 
 server:
   port: 8002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9001/eureka}
+  instance:
+    prefer-ip-address: true

@@ -3,13 +3,22 @@ spring:
     problemdetails:
       enabled: true
 
-  mongodb:
-    host: localhost
-    port: 13500
-    database: lms
-    username: root
-    password: mongodb
-    authentication-database: admin
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: ${MONGO_PORT:27017}
+      database: ${MONGO_DATABASE:lms}
 
 server:
   port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9001/eureka}
+  instance:
+    prefer-ip-address: true
+
+gcp:
+  bucket:
+    name: ${GCP_BUCKET_NAME:cloud-project-final-bucket}
