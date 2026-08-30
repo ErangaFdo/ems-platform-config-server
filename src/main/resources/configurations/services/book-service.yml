@@ -1,0 +1,24 @@
+spring:
+  mvc:
+    problemdetails:
+      enabled: true
+
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: ${MONGO_PORT:27017}
+      database: ${MONGO_DATABASE:lms}
+
+server:
+  port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVERS:http://vm-node-a.platform:9001/eureka/,http://vm-node-b.platform:9001/eureka/,http://vm-node-c.platform:9001/eureka/}
+  instance:
+    prefer-ip-address: true
+
+gcp:
+  bucket:
+    name: ${GCP_BUCKET_NAME:cloud-project-final-bucket}
